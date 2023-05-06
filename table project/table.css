@@ -1,0 +1,80 @@
+table {
+    margin: 100px auto;
+    background-color: rgb(252, 251, 251);
+    border-color: inherit;
+    border: none;
+
+}
+
+th,
+tr {
+    text-align: center;
+
+}
+
+th {
+    background-color: #72caf4;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(133, 236, 250, 0.3);
+
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+
+}
+
+tr:nth-child(even):hover {
+    background-color: rgb(133, 236, 250, 0.1);
+}
+
+tr:nth-child(odd):hover {
+    background-color: rgb(133, 236, 250, 0.1);
+}
+
+#searchinput {
+    margin: 15px;
+    position: relative;
+    border: 1px solid rgb(218, 217, 217);
+    outline: none;
+    top: 80px;
+    left: 900px;
+}
+
+.btn-add {
+    color: white;
+    background-color: #d9534f;
+    width: 55px;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.btn-add:hover {
+    background-color: rgb(201, 30, 24);
+}
+
+.btn-close {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #ccc;
+    width: 65px;
+    height: 35px;
+    border-radius: 5px;
+
+}
+
+.btn-close:hover {
+    background-color: rgb(128, 128, 128,0.2);
+}
+
+h4 {
+    position: relative;
+    top: 10px;
+    text-align: center;
+    opacity: 0.5;
+}

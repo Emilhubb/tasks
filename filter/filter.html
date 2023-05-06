@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filter.css">
+    <title>Document</title>
+</head>
+
+<style>
+    ul {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+    right: 30px;
+}
+li:hover{
+    transform: scale(102%);
+}
+
+li {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    background-color: aliceblue;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 33%;
+    list-style: none;
+    text-align: center;
+}
+
+table {
+    position: absolute;
+    top: 380px;
+    left: 300px;
+    border-collapse: collapse;
+}
+#itbutton:hover,
+#csbutton:hover,
+#isbutton:hover{
+    transform: scale(105%);
+}
+#buttonsrow{
+    width: 20%;
+}
+#istirak{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 5px;
+    outline: 0;
+    border: 1px solid blue;
+    background-color: rgb(91, 91, 230);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    box-sizing: border-box;
+
+}
+#qaib{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 1px solid rgb(165, 49, 49);
+    background-color: rgb(241, 43, 43);
+    color: #fff;
+    left: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    padding-right: 25px;
+    box-sizing: border-box;
+
+}
+#qaib:hover{
+    background-color: rgba(214, 24, 24, 0.9);
+
+}
+#istirak:hover{
+    background-color: rgba(25, 25, 180, 0.7);
+
+}
+
+#partinput{
+    background-color: #2d353c;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#iebutton{
+    background-color:#348fe2;
+    width: 30px;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+#qbbutton{
+    background-color:#ff5b57;
+    width: 30px;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+#partinput:hover{
+    transform: scale(101%);
+
+}
+#itbutton{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    width: 150px;
+    height: 50px;
+    outline: 0;
+    border: 1px solid gainsboro;
+    background-color: lightcoral ;
+    margin: 10px;
+    position: relative;
+    top: 15px;
+    left: 760px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#csbutton{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    background-color: yellowgreen;
+    margin: 10px;
+    position: relative;
+    top: 15px;
+    left: 770px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#isbutton{    
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    height: 50px;
+    outline: 0;
+    border: 1px solid gainsboro;
+    background-color: cornflowerblue;
+    margin: 10px;
+    position: relative;
+    top: 15px;
+    left: 780px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#buttonsrow{
+width: 100px;
+}
+.itlist,
+.cslist,
+.islist {
+    display: none;
+    
+}
+
+.firstli:hover .itlist,
+.secondli:hover .cslist,
+.thirdli:hover .islist {
+    display: block;
+}
+
+.firstli:hover .itlist ul,
+.secondli:hover .cslist ul,
+.thirdli:hover .islist ul {
+    display: inline;
+
+}
+
+.firstli:hover .itlist li,
+.secondli:hover .cslist li,
+.thirdli:hover .islist li {
+    /* border: none; */
+    outline: none;
+    border-bottom: 1px solid lightblue ;
+
+}
+.firstli:hover .itlist li:hover,
+.secondli:hover .cslist li:hover,
+.thirdli:hover .islist li:hover{
+    transform: scale(105%);
+}
+
+li ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(196, 193, 193);
+    padding: 0;
+    margin: 0;
+    
+}
+
+li:hover {
+    background-color: #e0fffc;
+}
+
+li ul li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 196px;
+    padding: 10px;
+    /* border: 1px solid black; */
+    cursor: pointer;
+    text-align: left;
+    font-weight: 700;
+    /* border-bottom: 1px solid black; */
+
+}
+
+li ul li::after {
+    content: '.22';
+}
+#display_group{
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    position: absolute;
+    left: 600px;
+    top: 260px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    display: none;
+}
+</style>
+
+<body>
+    <button id="itbutton">Information Technology</button>
+    <button id="csbutton">Computer Sciences</button>
+    <button id="isbutton">Information Security</button>
+    <ul clas>
+        <li class="firstli">651-653-655-657
+            <ul class="itlist">
+                <li id="group_651">651</li>
+                <li id="group_653">653</li>
+                <li id="group_655">655</li>
+                <li id="group_657">657</li>
+            </ul>
+        </li>
+        <li class="secondli">681-683-685-687
+            <ul class="cslist">
+                <li id="group_681">681</li>
+                <li id="group_683">683</li>
+                <li id="group_685">685</li>
+                <li id="group_687">687</li>
+            </ul>
+        </li>
+        <li class="thirdli">691-693-695-697
+            <ul class="islist">
+                <li id="group_691">691</li>
+                <li id="group_693">693</li>
+                <li id="group_695">695</li>
+                <li id="group_697">697</li>
+            </ul>
+        </li>
+    </ul>
+    <div id="display_group"></div>
+    <table border="1" width="60%">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+                <th>Qrup</th>
+                <th id="buttonsrow">
+                    <button id="istirak">i/e</button>
+                    <button id="qaib">q/b</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="body">
+        </tbody>
+    </table>
+    <script>
+    const students_IT = [
+    { name: "İsmayıl", surname: "Əliyev", age: 18, group: 651.22 },
+    { name: "Adil", surname: "Quliyev", age: 18, group: 653.22 },
+    { name: "Nihad", surname: "Nəzərov", age: 18, group: 651.22 },
+    { name: "Emin", surname: "Quliyev", age: 18, group: 651.22 },
+    { name: "Leyla", surname: "Nəzərova", age: 18, group: 655.22 },
+    { name: "İlhamə", surname: "Həmidova", age: 18, group: 651.22 },
+    { name: "Gülşən", surname: "İmanova", age: 18, group: 653.22 },
+    { name: "Tural", surname: "Ağayev", age: 18, group: 655.22 },
+    { name: "Ümid", surname: "Məlikov", age: 18, group: 653.22 },
+    { name: "Fəridə", surname: "Əliyeva", age: 18, group: 655.22 },
+    { name: "Fərid", surname: "Ağalarov", age: 18, group: 653.22 },
+    { name: "Yaqub", surname: "İmanov", age: 19, group: 655.22 },
+    { name: "Pərvanə", surname: "İsmayılova", age: 17, group: 657.22 },
+    { name: "Zəhra", surname: "Umudova", age: 18, group: 657.22 },
+    { name: "Rövşən", surname: "Kazımov", age: 18, group: 657.22 },
+    { name: "Yusif", surname: "Fəridli", age: 18, group: 657.22 },
+];
+const students_CS = [
+    { name: "Zeynəb", surname: "Yusifova", age: 18, group: 681.22 },
+    { name: "Adilə", surname: "Quliyeva", age: 18, group: 683.22 },
+    { name: "Cəmilə", surname: "İsmayılova", age: 18, group: 685.22 },
+    { name: "Turan", surname: "Qarayev", age: 18, group: 681.22 },
+    { name: "Dilbər", surname: "Həsənova", age: 18, group: 687.22 },
+    { name: "Elsən", surname: "Kərimov", age: 18, group: 683.22 },
+    { name: "Həsrət", surname: "Həsrətov", age: 18, group: 685.22 },
+    { name: "Tural", surname: "Ağayev", age: 18, group: 681.22 },
+    { name: "Nərgiz", surname: "Quluzadə", age: 18, group: 683.22 },
+    { name: "Bəkir", surname: "Əlizadə", age: 18, group: 685.22 },
+    { name: "Tahir", surname: "Məmmədov", age: 18, group: 687.22 },
+    { name: "Kənan", surname: "İmamov", age: 19, group: 687.22 },
+    { name: "İslam", surname: "Muxtərli", age: 17, group: 683.22 },
+    { name: "Zülfiyyə", surname: "Atayeva", age: 18, group: 681.22 },
+    { name: "Fidan", surname: "Həsənzadə", age: 18, group: 687.22 },
+    { name: "Göyçək", surname: "Əmirova", age: 18, group: 685.22 },
+];
+const students_IS = [
+    { name: "Aynurə", surname: "Paşayeva", age: 18, group: 691.22 },
+    { name: "Elgün", surname: "Hüseynzadə", age: 18, group: 693.22 },
+    { name: "Emil", surname: "Kazımov", age: 18, group: 695.22 },
+    { name: "Elmar", surname: "Quliyev", age: 18, group: 697.22 },
+    { name: "Sənan", surname: "Qasımzadə", age: 18, group: 691.22 },
+    { name: "Səmra", surname: "Mirzəyeva", age: 18, group: 693.22 },
+    { name: "Amid", surname: "Abdullayev", age: 18, group: 695.22 },
+    { name: "Sevinc", surname: "Məmmədov", age: 18, group: 697.22 },
+    { name: "İpək", surname: "Rəhimova", age: 18, group: 691.22 },
+    { name: "Gülər", surname: "Rəsulova", age: 18, group: 693.22 },
+    { name: "Ülkər", surname: "Əmirova", age: 18, group: 695.22 },
+    { name: "Nərgiz", surname: "Cəfərova", age: 19, group: 697.22 },
+    { name: "Elşən", surname: "Əhmədov", age: 17, group: 691.22 },
+    { name: "Elşad", surname: "Novruzov", age: 18, group: 693.22 },
+    { name: "Zəhra", surname: "Bağırova", age: 18, group: 695.22 },
+    { name: "Həsrət", surname: "Heydərli", age: 18, group: 697.22 }
+];
+
+let ITlist1 = document.querySelector("#group_651");
+let ITlist2 = document.querySelector("#group_653");
+let ITlist3 = document.querySelector("#group_655");
+let ITlist4 = document.querySelector("#group_657");
+
+let CSlist1 = document.querySelector("#group_681");
+let CSlist2 = document.querySelector("#group_683");
+let CSlist3 = document.querySelector("#group_685");
+let CSlist4 = document.querySelector("#group_687");
+
+let ISlist1 = document.querySelector("#group_691");
+let ISlist2 = document.querySelector("#group_693");
+let ISlist3 = document.querySelector("#group_695");
+let ISlist4 = document.querySelector("#group_697");
+
+let filter_data;
+let body = document.querySelector("tbody");
+let Number = document.querySelector("#display_group");
+let Table = document.getElementsByTagName("table");
+let ITbutton = document.querySelector("#itbutton");
+let CSbutton = document.querySelector("#csbutton");
+let ISbutton = document.querySelector("#isbutton");
+let istirakButton = document.querySelector("#istirak");
+let qaibButton = document.querySelector("#qaib");
+
+let row = document.getElementById("buttonsrow");
+console.log(row);
+function data(arr) {
+    body.innerHTML = "";
+    arr.forEach(element => {
+        body.innerHTML += `<tr>
+                <th>${element.name}</th>
+                <th>${element.surname}</th>
+                <th>${element.age}</th>
+                <th>${element.group}</th>
+                <th><button id="partinput">d/e</button></th>
+            </tr>`;
+    });
+}
+
+istirakButton.addEventListener("click", function () {
+    let buttons = document.querySelectorAll("#partinput");
+    buttons.forEach(button => {
+        button.id = "iebutton";
+        button.textContent = "i/e";
+        button.addEventListener("click", function () {
+            if (button.id === "iebutton") {
+                showDangerAlert("danger", "İştiraklara müdaxilə edə bilməzsiniz.");
+            }
+        });
+        showAlert("primary", "İştirak əlavə edildi.");
+    });
+})
+qaibButton.addEventListener("click", function () {
+    let buttons2 = document.querySelectorAll("#partinput");
+    buttons2.forEach(button => {
+        button.id = "qbbutton";
+        button.textContent = "q.";
+        button.addEventListener("click", function () {
+            if (button.id === "qbbutton") {
+                showDangerAlert("danger", "Qaiblərə müdaxilə edə bilməzsiniz.");
+            }
+        });
+        showAlert("primary", "Qaib əlavə edildi.");
+    });
+});
+
+body.addEventListener("click", function (event) {
+    if (event.target.id === "partinput") {
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+        modal.innerHTML = `
+        <p>Seçiminizi edin: </p>
+        <button id="iebutton">i/e</button>
+        <button id="qbbutton">q.</button>
+      `;
+        document.body.appendChild(modal);
+
+        const ieButton = document.querySelector("#iebutton");
+        ieButton.addEventListener("click", function () {
+            const partInputButton = document.querySelector("#partinput");
+            partInputButton.textContent = "i/e";
+            partInputButton.id = 'iebutton';
+            modal.remove();
+        });
+
+        const qbButton = document.getElementById("qbbutton");
+        qbButton.addEventListener("click", function () {
+            const partInputButton = document.querySelector("#partinput");
+            partInputButton.textContent = "q.";
+            partInputButton.id = 'qbbutton';
+            modal.remove();
+        });
+    }
+});
+function showAlert(type, message) {
+    const div = document.createElement("div");
+    div.className = `alert alert-${type}`;
+    div.textContent = message;
+    div.style.backgroundColor = 'turquoise'
+    div.style.color = "white";
+    div.style.textAlign = 'center';
+    div.style.fontSize = '25px'
+    div.style.width = '700px';
+    div.style.height = '30px'
+    div.style.position = 'absolute';
+    div.style.left = '360px'
+    div.style.top = '120px'
+
+    document.body.appendChild(div);
+    setTimeout(function () {
+        div.remove();
+    }, 2000);
+}
+function showDangerAlert(type, message) {
+    const div = document.createElement("div");
+    div.className = `alert alert-${type}`;
+    div.textContent = message;
+    div.style.backgroundColor = 'red'
+    div.style.color = "white";
+    div.style.textAlign = 'center';
+    div.style.fontSize = '25px'
+    div.style.width = '700px';
+    div.style.height = '30px'
+    div.style.position = 'absolute';
+    div.style.left = '360px'
+    div.style.top = '120px'
+
+    document.body.appendChild(div);
+    setTimeout(function () {
+        div.remove();
+    }, 2000);
+}
+function add() {
+    let button = document.createElement("button");
+    button.id = "partinput";
+    button.textContent = "d/e";
+}
+ITbutton.addEventListener('click', () => {
+    data(students_IT);
+    Number.style.display = "block";
+    Number.innerText = "Information Technology";
+    Number.style.backgroundColor = "lightcoral";
+    Number.style.width = "200px";
+    Number.style.height = "80px";
+    Number.style.position = "relative";
+    Number.style.top = "120px";
+    add();
+
+
+})
+CSbutton.addEventListener('click', () => {
+    data(students_CS);
+    Number.style.display = "block";
+    Number.innerText = "Computer Sciences";
+    Number.style.backgroundColor = "yellowgreen";
+    Number.style.width = "200px";
+    Number.style.height = "80px";
+    Number.style.position = "relative";
+    Number.style.top = "120px";
+
+
+})
+ISbutton.addEventListener('click', () => {
+    data(students_IS);
+    Number.style.display = "block";
+    Number.innerText = "Information Security";
+    Number.style.backgroundColor = "cornflowerblue";
+    Number.style.width = "200px";
+    Number.style.height = "80px";
+    Number.style.position = "relative";
+    Number.style.top = "120px";
+
+
+})
+
+
+ITlist1.addEventListener("click", () => {
+    filter_data = students_IT.filter(x => x.group == 651.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "crimson"
+
+    Number.innerText = "651.22";
+})
+ITlist2.addEventListener("click", () => {
+    filter_data = students_IT.filter(x => x.group == 653.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "crimson"
+    Number.innerText = "653.22";
+
+})
+ITlist3.addEventListener("click", () => {
+    filter_data = students_IT.filter(x => x.group == 655.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "crimson"
+    Number.innerText = "655.22";
+
+})
+ITlist4.addEventListener("click", () => {
+    filter_data = students_IT.filter(x => x.group == 657.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "crimson"
+    Number.innerText = "657.22";
+
+})
+CSlist1.addEventListener("click", () => {
+    filter_data = students_CS.filter(x => x.group == 681.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightgreen"
+    Number.innerText = "681.22";
+
+})
+CSlist2.addEventListener("click", () => {
+    filter_data = students_CS.filter(x => x.group == 683.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightgreen"
+    Number.innerText = "683.22";
+
+})
+CSlist3.addEventListener("click", () => {
+    filter_data = students_CS.filter(x => x.group == 685.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightgreen"
+    Number.innerText = "685.22";
+
+})
+CSlist4.addEventListener("click", () => {
+    filter_data = students_CS.filter(x => x.group == 687.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightgreen"
+    Number.innerText = "687.22";
+
+})
+ISlist1.addEventListener("click", () => {
+    filter_data = students_IS.filter(x => x.group == 691.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightblue"
+    Number.innerText = "691.22";
+
+})
+ISlist2.addEventListener("click", () => {
+    filter_data = students_IS.filter(x => x.group == 693.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightblue"
+    Number.innerText = "693.22";
+
+})
+ISlist3.addEventListener("click", () => {
+    filter_data = students_IS.filter(x => x.group == 695.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightblue"
+    Number.innerText = "695.22";
+
+})
+ISlist4.addEventListener("click", () => {
+    filter_data = students_IS.filter(x => x.group == 697.22)
+    data(filter_data);
+    Number.style.display = "block";
+    Number.style.backgroundColor = "lightblue"
+    Number.innerText = "697.22";
+})
+</script>
+</body>
+
+</html>

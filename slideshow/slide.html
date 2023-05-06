@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 50%;
+            height: 400px;
+            box-shadow: 2px 2px 5px gray;
+            margin: 150px auto;
+
+        }
+
+        .mySlides {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dot-group1{
+            height: 100%;
+            width: 100%;
+            background-color: red;
+        }
+        .dot-group2{
+            height: 100%;
+            width: 100%;
+            background-color: green;
+        }
+        .dot-group3{
+            height: 100%;
+            width: 100%;
+            background-color: blue;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+        .dot {
+            position: relative;
+            top: 350px;
+            left: 170px;
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 10px;
+            background-color: #bbb;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .dot-group {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="dot-group1">
+                <span class="dot dot1" onclick="currentSlide(1)"></span>
+                <span class="dot dot2" onclick="currentSlide(2)"></span>
+                <span class="dot dot3" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="dot-group2">
+                <span class="dot dot1" onclick="currentSlide(1)"></span>
+                <span class="dot dot2" onclick="currentSlide(2)"></span>
+                <span class="dot dot3" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="dot-group3">
+                <span class="dot dot1" onclick="currentSlide(1)"></span>
+                <span class="dot dot2" onclick="currentSlide(2)"></span>
+                <span class="dot dot3" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <script>
+
+        let slideIndex = 1;
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+                dots[i].classList.remove("active-dot");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            dots[slideIndex - 1].classList.add("active-dot");
+        }
+
+    </script>
+</body>
+
+</html>
