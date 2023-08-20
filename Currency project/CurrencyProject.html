@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CurrencyProject.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LIVE - Real-time Currency </title>
+</head>
+
+<body>
+    <div class="preview">
+        <div>
+            <div class="flag"> <img src="photos/azn.png" width="50px" height="35px"></div>
+            <div class="money"> Azerbaijani manat</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/usd.png" width="50px" height="35px"></div>
+            <div class="money">US dollar</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/eur.png" width="50px" height="35px"></div>
+            <div class="money">Euro</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/rus.png" width="50px" height="35px"></div>
+            <div class="money">Russian ruble</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/gbp.png" width="50px" height="35px"></div>
+            <div class="money">British pound</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/try.png" width="50px" height="35px"></div>
+            <div class="money">Turkish lira</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/chf.png" width="50px" height="35px"></div>
+            <div class="money">Swiss franc</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/jpy.png" width="50px" height="35px"></div>
+            <div class="money">Japanese yen</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/gel.png" width="50px" height="35px"></div>
+            <div class="money">Georgian lari</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/sek.png" width="50px" height="35px"></div>
+            <div class="money">Swedish krona</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/cny.png" width="50px" height="35px"></div>
+            <div class="money">Chinese yuan</div>
+        </div>
+        <div>
+            <div class="flag"> <img src="photos/ils.png" width="50px" height="35px"></div>
+            <div class="money">Israeli shekel</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main">
+            <div class="header">
+                <div class="topOfheader">
+                    <h4>
+                        <i class="fa-solid fa-circle fa-beat-fade fa-sm" style="color: #f20707;"></i>
+                        LIVE - Currency
+                    </h4>
+                    <div class="date" title="Local time / Azerbaijan"> <i id="currentDate"> </i> </div>
+                </div>
+                <div class="form">
+                    <form>
+                        <select id="currencySelect">
+                            <option value="AZN">AZN</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                            <option>RUB</option>
+                            <option>GBP</option>
+                            <option>TRY</option>
+                            <option>CHF</option>
+                            <option>JPY</option>
+                            <option>GEL</option>
+                            <option>SEK</option>
+                            <option>CNY</option>
+                            <option>ILS</option>
+
+                        </select>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <input id='amount' type="number" placeholder='Enter the value' min="0">
+                    </form>
+                </div>
+            </div>
+            <div class="bodyPart">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/azn.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">AZN</div>
+                            <input type="number" class="result" data-currency="AZN" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/usd.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">USD</div>
+                            <input type="number" class="result" data-currency="USD" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/eur.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">EUR</div>
+                            <input type="number" class="result" data-currency="EUR" readonly placeholder="Value">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/rus.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">RUB</div>
+                            <input type="number" class="result" data-currency="RUB" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/gbp.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">GBP</div>
+                            <input type="number" class="result" data-currency="GBP" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/try.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">TRY</div>
+                            <input type="number" class="result" data-currency="TRY" readonly placeholder="Value">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/chf.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">CHF</div>
+                            <input type="number" class="result" data-currency="CHF" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/jpy.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">JPY</div>
+                            <input type="number" class="result" data-currency="JPY" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/gel.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">GEL</div>
+                            <input type="number" class="result" data-currency="GEL" readonly placeholder="Value">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/sek.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">SEK</div>
+                            <input type="number" class="result" data-currency="SEK" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/cny.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">CNY</div>
+                            <input type="number" class="result" data-currency="CNY" readonly placeholder="Value">
+                        </td>
+                        <td>
+                            <div class="bodyFlag"><img src="photos/ils.png" width="100px" height="70px"></div>
+                            <div class="bodyMoney">ILS</div>
+                            <input type="number" class="result" data-currency="ILS" readonly placeholder="Value">
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <script src="CurrencyProject.js">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>WeatherApp</title>
+</head>
+
+<body>
+    <nav>
+        <img src="./icon.png">
+        <p>WeatherApp</p>
+        <p id="p">Your Favorite Weather App</p>
+        <ul>
+            <li><a href="#">3 Days Forecast</a></li>
+            <li><a href="#">5 Days Forecast</a></li>
+            <li><a href="#">10 Days Forecast</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+
+        <div class="top">
+            <form id="form">
+                <input type="text" placeholder="Enter Your Location" id="Location">
+            </form>
+
+            <div class="info">
+                <div class="firstInfo">
+                    <p id="location"> N/A</p>
+                    <p class="temp"></p>
+                    <p class="weather"></p>
+                    <p id="maxmintemp"></p>
+                    <div id="icon">
+                    </div>
+                </div>
+                <div class="details">
+                    <p id="pressure"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                    <p id="feelsLike"></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <table>
+                <tr>
+                    <td>Tomorrow</td>
+                    <td>Next Day</td>
+                    <td>3 Days later</td>
+                    <td>4 Days Later</td>
+                    <td>5 Days Later</td>
+                </tr>
+                <tr id="secondTr">
+                    <td> N/A </td>
+                    <td> N/A </td>
+                    <td> N/A </td>
+                    <td> N/A </td>
+                    <td> N/A </td>
+                </tr>
+                <tr id="thirdTr">
+                    <td> N/A</td>
+                    <td> N/A</td>
+                    <td> N/A</td>
+                    <td> N/A</td>
+                    <td> N/A</td>
+                </tr>
+                <tr id="fourthTr">
+                    <td> N/A</td>
+                    <td> N/A</td>
+                    <td> N/A</td>
+                    <td> N/A</td>
+                    <td> N/A</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="weather.js"></script>
+</body>
+
+</html>

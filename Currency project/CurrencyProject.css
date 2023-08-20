@@ -1,0 +1,248 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: cadetblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.preview {
+    display: flex;
+    min-width: 81rem;
+    background-color: darkcyan;
+}
+.preview div{
+    width: 100%;
+}
+
+.flag {
+    text-align: center;
+    padding: 1px;
+    height: 40%;
+    border-bottom: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+.money {
+    text-align: center;
+    padding: 1px;
+    font-size: 22px;
+    height: 50%;
+    border-right: 1px dashed cadetblue;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(211, 211, 211, 0.397);
+    height: auto;
+    padding: 0px;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin: 10px;
+    box-shadow: 2px 1px 15px lightblue;
+
+}
+
+.header {
+    border-radius: 10px;
+    background-color: rgba(34, 105, 107, 0.753);
+
+}
+
+.topOfheader {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(34, 105, 107, 0.753);
+    margin: 0px;
+    height: 70px;
+    border-radius: 10px;
+
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.topOfheader>h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 20px;
+    padding-left: 210px;
+    flex: 1;
+    text-align: center;
+    color: turquoise;
+    animation: pulsate 1s ease-in-out infinite;
+
+}
+
+.date {
+    box-shadow: 1px -1px 50px cadetblue;
+    width: 140px;
+    height: 35px;
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    padding-top: 4px;
+
+}
+
+form {
+    margin: 23px;
+    text-align: center;
+    /* box-shadow: 3px 1px 70px blue; */
+    width: 60%;
+    margin-left: 200px;
+    border-radius: 4px;
+}
+
+select {
+    padding: 13px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    background-color: rgba(225, 252, 255, 0.466);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+option {
+    font-weight: 600;
+    background-color: rgba(65, 109, 110, 0.733);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#amount {
+    padding: 10px;
+    margin: 10px;
+    margin-left: 50px;
+    font-size: 24px;
+    background-color: rgba(62, 183, 187, 0.753);
+    border: 0;
+    /* box-shadow: 2px 2px 50px blue; */
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+}
+
+#amount:focus {
+    border: 0;
+    outline: 0;
+}
+
+select:focus {
+    border: 0;
+    outline: 0;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.644);
+    font-size: 20px;
+}
+
+.bodyPart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgba(113, 201, 204, 0.89);
+    margin: 50px;
+    box-shadow: 2px 1px 50px rgba(173, 216, 230, 0.377);
+}
+
+.bodyFlag {
+    padding: 25px;
+}
+
+.bodyMoney {
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+}
+
+td input {
+    padding: 10px;
+    border: 0;
+    border-radius: 20px;
+    outline: 0;
+    margin: 0;
+    font-size: 20px;
+    background-color: rgb(75, 149, 151);
+    color: wheat;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form i {
+    position: relative;
+    left: 25px;
+    font-size: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: white;
+    }
+
+    50% {
+        transform: scale(1.04);
+        color: white;
+
+    }
+
+    100% {
+        transform: scale(1);
+        color: white;
+
+    }
+}
+
+#currentDate {
+    color: white;
+
+    font-weight: bold;
+}
