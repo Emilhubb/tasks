@@ -1,0 +1,41 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(to left,#695454, #35374e);
+
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.accordion-header {
+    background-color: #4b7c88;
+    color: #fafafa;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-bottom: 1px solid rgb(45, 99, 99);
+    font-weight: bold;
+}
+
+.accordion-header:hover {
+    background-color: #294c5f;
+}
+.accordion-content {
+    width: 50%;
+    padding: 0 18px;
+    display: none;
+    background-color: rgb(230, 230, 230);
+    overflow: hidden;
+    border: 1px solid rgb(102, 167, 167);
+}

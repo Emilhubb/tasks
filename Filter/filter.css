@@ -1,0 +1,250 @@
+ul {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+    right: 30px;
+}
+
+li:hover {
+    transform: scale(102%);
+}
+
+li {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    background-color: aliceblue;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 33%;
+    list-style: none;
+    text-align: center;
+}
+
+table {
+    position: absolute;
+    top: 380px;
+    left: 300px;
+    border-collapse: collapse;
+}
+
+#itbutton:hover,
+#csbutton:hover,
+#isbutton:hover {
+    transform: scale(105%);
+}
+
+#buttonsrow {
+    width: 20%;
+}
+
+#istirak {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 5px;
+    outline: 0;
+    border: 1px solid blue;
+    background-color: rgb(91, 91, 230);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    box-sizing: border-box;
+
+}
+
+#qaib {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 1px solid rgb(165, 49, 49);
+    background-color: rgb(241, 43, 43);
+    color: #fff;
+    left: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    padding-right: 25px;
+    box-sizing: border-box;
+
+}
+
+#qaib:hover {
+    background-color: rgba(214, 24, 24, 0.9);
+
+}
+
+#istirak:hover {
+    background-color: rgba(25, 25, 180, 0.7);
+
+}
+
+#partinput {
+    background-color: #2d353c;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#iebutton {
+    background-color: #348fe2;
+    width: 30px;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+#qbbutton {
+    background-color: #ff5b57;
+    width: 30px;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#partinput:hover {
+    transform: scale(101%);
+
+}
+
+#itbutton {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    width: 150px;
+    height: 50px;
+    outline: 0;
+    border: 1px solid gainsboro;
+    background-color: lightcoral;
+    margin: 10px;
+    position: relative;
+    top: 15px;
+    left: 760px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#csbutton {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    background-color: yellowgreen;
+    margin: 10px;
+    position: relative;
+    top: 15px;
+    left: 770px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#isbutton {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    height: 50px;
+    outline: 0;
+    border: 1px solid gainsboro;
+    background-color: cornflowerblue;
+    margin: 10px;
+    position: relative;
+    top: 15px;
+    left: 780px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#buttonsrow {
+    width: 100px;
+}
+
+.itlist,
+.cslist,
+.islist {
+    display: none;
+
+}
+
+.firstli:hover .itlist,
+.secondli:hover .cslist,
+.thirdli:hover .islist {
+    display: block;
+}
+
+.firstli:hover .itlist ul,
+.secondli:hover .cslist ul,
+.thirdli:hover .islist ul {
+    display: inline;
+
+}
+
+.firstli:hover .itlist li,
+.secondli:hover .cslist li,
+.thirdli:hover .islist li {
+    /* border: none; */
+    outline: none;
+    border-bottom: 1px solid lightblue;
+
+}
+
+.firstli:hover .itlist li:hover,
+.secondli:hover .cslist li:hover,
+.thirdli:hover .islist li:hover {
+    transform: scale(105%);
+}
+
+li ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(196, 193, 193);
+    padding: 0;
+    margin: 0;
+
+}
+
+li:hover {
+    background-color: #e0fffc;
+}
+
+li ul li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 196px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 700;
+}
+
+li ul li::after {
+    content: '.22';
+}
+
+#display_group {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    position: absolute;
+    left: 600px;
+    top: 260px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    display: none;
+}
