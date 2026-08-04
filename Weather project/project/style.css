@@ -160,3 +160,27 @@ table{
 table img{
     width: 10vh;
 }
+
+@media (max-width: 768px){
+    .main{
+        width: 95%;
+        margin: 60px auto;
+        height: auto;
+    }
+    .info{
+        flex-direction: column;
+    }
+    .firstInfo{
+        width: 100%;
+    }
+    .details{
+        width: 100%;
+        float: none;
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+    #icon{
+        position: static;
+        margin-top: 10px;
+    }
+}
