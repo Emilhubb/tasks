@@ -40,6 +40,10 @@ amountInput.addEventListener('keydown', function (event) {
         event.preventDefault();
     }
 });
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+});
 const currency = new Currency();
 function time() {
     let time = new Date();
@@ -84,10 +88,12 @@ currencySelect.addEventListener('change', () => {
     });
 });
 
-amountInput.addEventListener('input', () => {
+amountInput.addEventListener('input', (e) => {
+
     const bodyMoneyDivs = document.querySelectorAll('.bodyMoney');
     bodyMoneyDivs.forEach((div) => {
         const secondOptionValue = div.textContent;
         exchange(secondOptionValue);
     });
+    e.preventDefault();
 });
