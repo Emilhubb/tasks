@@ -1,8 +1,9 @@
 const currencySelect = document.getElementById('currencySelect');
 const amountInput = document.querySelector('#amount');
 let resultElements = document.querySelectorAll('.result');
-const money = document.querySelectorAll('.bodyMoney')
-const date = document.querySelector('#currentDate')
+const money = document.querySelectorAll('.bodyMoney');
+const date = document.querySelector('#currentDate');
+
 const currencies = {
     AZN: 'Azerbaijani manat',
     USD: 'US dollar',
@@ -19,21 +20,23 @@ const currencies = {
 
 class Currency {
     constructor() {
-        this.url =
-            "https://api.fastforex.io/fetch-multi?api_key=869d171809-0a8ef8fbc7-rylwy5";
+        this.api = 'a557eef4f1ab9e92bc9d69c3';
+        this.baseUrl = `https://v6.exchangerate-api.com/v6/${this.api}/pair`;
     }
 
     async exchange(amount, firstCurrency, secondCurrency) {
         const response = await fetch(
-            `${this.url}&from=${firstCurrency}&to=${secondCurrency}`
+            `${this.baseUrl}/${firstCurrency}/${secondCurrency}/${amount}`
         );
         const data = await response.json();
-        const result = data.results[secondCurrency]
-        const exchangedResult = amount * result;
-        return exchangedResult;
+
+        if (data.result !== 'success') {
+            throw new Error(data['error-type'] || 'API error');
+        }
+
+        return data.conversion_result;
     }
 }
-
 
 amountInput.addEventListener('keydown', function (event) {
     if (event.key === '-' || event.key === 'Subtract') {
@@ -41,38 +44,33 @@ amountInput.addEventListener('keydown', function (event) {
     }
 });
 
-document.querySelector('form').addEventListener('submit', function(event) {
+document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
 });
-const currency = new Currency();
-function time() {
-    let time = new Date();
-    let hours = time.getHours();
-    let minutes = time.getMinutes();
-    let seconds = time.getSeconds();
 
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    let fullDate = `${hours}:${minutes}:${seconds}`;
-    date.textContent = fullDate;
+const currency = new Currency();
+
+function time() {
+    let now = new Date();
+    let hours = String(now.getHours()).padStart(2, '0');
+    let minutes = String(now.getMinutes()).padStart(2, '0');
+    let seconds = String(now.getSeconds()).padStart(2, '0');
+    date.textContent = `${hours}:${minutes}:${seconds}`;
 }
 setInterval(time, 1000);
+time();
+
 function exchange(secondCurrency) {
     const amount = Number(amountInput.value.trim());
     const firstOptionValue = currencySelect.value;
+
+    if (!amount || amount <= 0) return;
 
     currency.exchange(amount, firstOptionValue, secondCurrency)
         .then((response) => {
             resultElements.forEach((input) => {
                 if (input.dataset.currency === secondCurrency) {
-                    input.value = response.toFixed(4);
+                    input.value = response.toFixed(2);
                 }
             });
         })
@@ -83,17 +81,16 @@ function exchange(secondCurrency) {
 
 currencySelect.addEventListener('change', () => {
     money.forEach((div) => {
-        const secondOptionValue = div.textContent;
+        const secondOptionValue = div.textContent.trim();
         exchange(secondOptionValue);
     });
 });
 
 amountInput.addEventListener('input', (e) => {
-
+    e.preventDefault();
     const bodyMoneyDivs = document.querySelectorAll('.bodyMoney');
     bodyMoneyDivs.forEach((div) => {
-        const secondOptionValue = div.textContent;
+        const secondOptionValue = div.textContent.trim();
         exchange(secondOptionValue);
     });
-    e.preventDefault();
 });
