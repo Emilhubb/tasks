@@ -11,8 +11,6 @@ async function GetData(city) {
     const cityName = responseData.city.name
     const country = responseData.city.country
     console.log(responseData);
-    console.log(cityName);
-    console.log(country);
     insertData(responseData)
 }
 
@@ -42,7 +40,6 @@ function insertData(responseData) {
     `;
     const cityName = responseData.city.name
     const country = responseData.city.country
-    console.log(cityName)
     document.getElementById('location').innerText = ` ${cityName},${country}`
 
     const MaxTemp = (responseData.list[0].main.temp_max - 273.15).toFixed(0)
@@ -78,19 +75,10 @@ function insertData(responseData) {
     `;
 
     const TomorrowMaxTemp = (responseData.list[6].main.temp_max - 273.15).toFixed(0)
-    const TomorrowMinTemp = (responseData.list[6].main.temp_min - 273.15).toFixed(0)
-
     const NextDayMaxTemp = (responseData.list[14].main.temp_max - 273.15).toFixed(0)
-    const NextDayMinTemp = (responseData.list[14].main.temp_min - 273.15).toFixed(0)
-
     const ThirdDayMaxTemp = (responseData.list[22].main.temp_max - 273.15).toFixed(0)
-    const ThirdDayMinTemp = (responseData.list[22].main.temp_min - 273.15).toFixed(0)
-
     const FourthDayMaxTemp = (responseData.list[30].main.temp_max - 273.15).toFixed(0)
-    const FourthDayMinTemp = (responseData.list[30].main.temp_min - 273.15).toFixed(0)
-
     const FifthDayMaxTemp = (responseData.list[38].main.temp_max - 273.15).toFixed(0)
-    const FifthDayMinTemp = (responseData.list[38].main.temp_min - 273.15).toFixed(0)
 
     document.getElementById('fourthTr').innerHTML = `
     
